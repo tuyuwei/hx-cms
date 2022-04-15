@@ -1,3 +1,3 @@
 上海竑鑫企业管理系统
 
-系统采用spring boot、mybatis
+系统采用Spring boot、Mybatis
