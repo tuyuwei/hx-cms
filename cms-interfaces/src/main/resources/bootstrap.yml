@@ -1,0 +1,16 @@
+spring:
+  application:
+    # 域标识
+    name: cms-interfaces
+    domain: cms-interfaces
+  main:
+    allow-bean-definition-overriding: true
+  dao:
+    exceptiontranslation:
+      enabled: true
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 100MB
+
+
