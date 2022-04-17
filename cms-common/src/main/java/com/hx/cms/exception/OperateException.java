@@ -6,6 +6,10 @@ package com.hx.cms.exception;
  **/
 public class OperateException extends RuntimeException {
 
+    public OperateException(String message) {
+        super(message);
+    }
+
     public OperateException(String message, Throwable cause) {
         super(message, cause);
     }
