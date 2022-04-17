@@ -12,7 +12,7 @@
         <property name="javaFileEncoding" value="utf-8"/>
         <property name="useActualColumnNames" value="true"/>
 
-        <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
+        <!--<plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>-->
 
         <commentGenerator>
             <property name="suppressDate" value="true"/>
@@ -32,7 +32,7 @@
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
 
-        <sqlMapGenerator targetPackage="mappers.generate" targetProject="src/main/resources">
+        <sqlMapGenerator targetPackage="mapper.generate" targetProject="src/main/resources">
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
 

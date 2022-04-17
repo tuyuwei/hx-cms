@@ -1,15 +1,11 @@
 package com.hx.cms.entity.dto;
 
-import java.io.Serializable;
-
-public class EmployeeDto implements Serializable {
+public class EmployeeDto {
     private Long id;
 
     private String name;
 
     private Integer age;
-
-    private static final long serialVersionUID = 1L;
 
     public Long getId() {
         return id;
