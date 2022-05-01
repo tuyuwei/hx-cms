@@ -3,6 +3,7 @@ package com.hx.cms;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 /**
@@ -11,7 +12,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
  **/
 @EnableWebMvc
 @MapperScan({"com.hx.cms.mapper"})
-@SpringBootApplication(scanBasePackages = {"com.hx.cms"})
+@SpringBootApplication(scanBasePackages = {"com.hx.cms"}, exclude = {DataSourceAutoConfiguration.class})
 public class CmsInterfacesApplication {
 
     public static void main(String[] args) {
