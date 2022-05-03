@@ -31,7 +31,9 @@ public class InterfacesAuthenticationFilter extends OncePerRequestFilter {
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response,
                                     FilterChain filterChain) throws ServletException, IOException {
         log.info("before doFilterInternal.");
-        userLoginService.login(null);
+        //userLoginService.login(null);
         filterChain.doFilter(request, response);
     }
+
+
 }

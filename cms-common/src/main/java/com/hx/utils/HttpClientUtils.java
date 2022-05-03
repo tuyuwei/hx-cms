@@ -1,5 +1,6 @@
 package com.hx.utils;
 
+import com.hx.cms.config.SpringBean;
 import com.hx.cms.exception.OperateException;
 import com.hx.cms.exception.RequestException;
 import org.apache.commons.lang3.StringUtils;
@@ -11,8 +12,6 @@ import java.util.Objects;
 
 public class HttpClientUtils {
 
-
-    private final static RestTemplate restTemplate = new RestTemplate();
 
     public static <T> T post() {
 
@@ -26,12 +25,16 @@ public class HttpClientUtils {
         if (Objects.isNull(clazz)) {
             throw new RequestException("response class type is blank.");
         }
-
-        ResponseEntity<T> response = restTemplate.getForEntity(url, clazz, params);
+        RestTemplate restTemplate = SpringBean.getBean(RestTemplate.class);
+        if (Objects.isNull(restTemplate)) {
+            throw new RequestException("load restTemplate error.");
+        }
+        ResponseEntity<String> response = restTemplate.getForEntity(url, String.class, params);
         if (!Objects.equals(response.getStatusCode(), HttpStatus.OK)) {
             throw new OperateException("http request error.");
         }
-        return response.getBody();
+        String body = response.getBody();
+        return JsonUtils.decode(body, clazz);
     }
 
 }
