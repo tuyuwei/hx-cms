@@ -17,14 +17,6 @@ public class WechatResponse {
      * 登录后前端的每次接口请求都需带上session_key
      */
     private String session_key;
-    /**
-     * 错误码
-     */
-    private String errcode;
-    /**
-     * 错误信息
-     */
-    private String errmsg;
 
     public void verify() {
         if (StringUtils.isBlank(openid) || StringUtils.isBlank(session_key)) {

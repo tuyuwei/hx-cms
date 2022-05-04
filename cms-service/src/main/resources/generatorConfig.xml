@@ -45,5 +45,9 @@
                enableDeleteByExample="false" enableSelectByExample="false"
                enableInsert="true"/>
 
+        <table tableName="user" domainObjectName="UserDto"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               enableInsert="true"/>
     </context>
 </generatorConfiguration>

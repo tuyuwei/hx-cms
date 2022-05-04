@@ -16,7 +16,6 @@ public class WechatAppConfig {
 
     private String secret;
 
-
     public String buildUri() {
         return url + "?appid=" + id + "&secret=" + secret;
     }
