@@ -3,6 +3,8 @@ package com.hx.cms.entity.dto;
 import java.util.Date;
 
 public class UserDto {
+    private Long id;
+
     private String openId;
 
     private String skey;
@@ -21,9 +23,19 @@ public class UserDto {
 
     private String nickName;
 
+    private Date lastVisitTime;
+
     private Date createTime;
 
-    private Date lastVisitTime;
+    private Byte deleted;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getOpenId() {
         return openId;
@@ -97,6 +109,14 @@ public class UserDto {
         this.nickName = nickName == null ? null : nickName.trim();
     }
 
+    public Date getLastVisitTime() {
+        return lastVisitTime;
+    }
+
+    public void setLastVisitTime(Date lastVisitTime) {
+        this.lastVisitTime = lastVisitTime;
+    }
+
     public Date getCreateTime() {
         return createTime;
     }
@@ -105,11 +125,11 @@ public class UserDto {
         this.createTime = createTime;
     }
 
-    public Date getLastVisitTime() {
-        return lastVisitTime;
+    public Byte getDeleted() {
+        return deleted;
     }
 
-    public void setLastVisitTime(Date lastVisitTime) {
-        this.lastVisitTime = lastVisitTime;
+    public void setDeleted(Byte deleted) {
+        this.deleted = deleted;
     }
 }
